@@ -17,7 +17,16 @@ var times = {
 }
 
 $(".time-block").addClass('future');
-$(".time-block").each(function(){
-	
 
-})
+$(".time-block").each(function(){
+	var test = times[$(this).children().first().text()];
+	if( test < hour) {
+		$(this).removeClass("future");
+		$(this).addClass("past");
+	} else if( test == hour) {
+		$(this).removeClass("future");
+		$(this).addClass("present");
+	} else {
+		$(this).addClass("future");
+	}
+});
