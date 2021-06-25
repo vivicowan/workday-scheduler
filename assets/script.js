@@ -1,6 +1,6 @@
 // Declaring a variable for the currentDay id in the header of the html with a moment date.
 var currentDay = moment();
-$("#currentDay").text(currentDay.format('dddd, MMMM Do'));
+$("#currentDay").text(currentDay.format('dddd, MMMM Do, YYYY'));
 
 // Declaring a variable for the current hour to be read in military time and to use in condition statements.
 var hour = moment().format('HH');
