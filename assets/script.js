@@ -19,14 +19,29 @@ var times = {
 $(".time-block").addClass('future');
 
 $(".time-block").each(function(){
-	var test = times[$(this).children().first().text()];
-	if( test < hour) {
+	var check = times[$(this).children().first().text()];
+	if( check < hour) {
 		$(this).removeClass("future");
 		$(this).addClass("past");
-	} else if( test == hour) {
+	} else if( check == hour) {
 		$(this).removeClass("future");
 		$(this).addClass("present");
 	} else {
 		$(this).addClass("future");
 	}
 });
+
+var info = [];
+
+$(".saveBtn").on("click", function(event){
+	event.preventDefault();
+	var userInfo = $(this).siblings().eq(1).val();
+	info = $(this).parent().attr("info");
+	localStorage.setItem(info, userInfo);
+	alert(localStorage.getItem(info) + " is saved!");
+});
+
+
+
+
+
